@@ -1,9 +1,12 @@
 import path from "node:path";
 
 
+console.log(process.env.NODE_ENV)
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     app: {
+        baseURL: process.env.NODE_ENV === "production" ? "/scss-toolkit/" : "/",
         head: {
             link: [
                 {
