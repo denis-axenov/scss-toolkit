@@ -1,7 +1,6 @@
 {
   "name": "scss-toolkit",
   "version": "1.0.0-alpha",
-  "type": "module",
   "author": "Denis Axenov",
   "license": "MIT",
   "bugs": {
