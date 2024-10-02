@@ -1,0 +1,36 @@
+@use "sass:list";
+@use "../functions/calc";
+@use "spacing";
+
+
+$_rowCount: 0 !default;
+$_spacing: 1rem !default;
+$_flexDirection: false !default;
+
+
+@mixin grid(
+  $rowCount: $_rowCount,
+  $spacing: $_spacing
+) {
+  display: grid;
+  grid-template-columns: repeat($rowCount, 1fr);
+  @include spacing.gap($spacing);
+}
+
+@mixin flexGrid(
+  $rowCount: $_rowCount,
+  $spacing: $_spacing,
+  $flexDirection: $_flexDirection
+) {
+  display: flex;
+  flex-wrap: wrap;
+  @include spacing.gap($spacing);
+
+  @if $flexDirection {
+    flex-direction: $flexDirection;
+  }
+
+  > * {
+    width: calc.sizeWithGap($rowCount, list.nth($spacing, 1));
+  }
+}

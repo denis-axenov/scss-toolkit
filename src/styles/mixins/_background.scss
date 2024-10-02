@@ -1,0 +1,22 @@
+$_imageSize: cover !default;
+$_imagePosition: center !default;
+$_imageRepeat: no-repeat !default;
+$_imageAttachment: false !default;
+
+
+@mixin image(
+  $url,
+  $size: $_imageSize,
+  $position: $_imagePosition,
+  $repeat: $_imageRepeat,
+  $attachment: $_imageAttachment
+) {
+  background-image: url($url);
+  background-size: $size;
+  background-position: $position;
+  background-repeat: $repeat;
+
+  @if $attachment {
+    background-attachment: $attachment;
+  }
+}

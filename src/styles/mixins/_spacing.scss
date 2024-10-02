@@ -1,0 +1,35 @@
+@use 'sass:list';
+
+
+$_gapSpacing: 1rem !default;
+$_paddingSpacing: 1rem !default;
+
+
+@mixin gap(
+  $spacing: $_gapSpacing
+) {
+  $spacingListCount: list.length($spacing);
+
+  @if $spacingListCount == 1 {
+    gap: list.nth($spacing, 1);
+  }
+
+  @if $spacingListCount == 2 {
+    column-gap: list.nth($spacing, 1);
+    row-gap: list.nth($spacing, 2);
+  }
+}
+
+@mixin paddingY(
+  $spacing: $_paddingSpacing
+) {
+  padding-top: $spacing;
+  padding-bottom: $spacing;
+}
+
+@mixin paddingX(
+  $spacing: $_paddingSpacing
+) {
+  padding-left: $spacing;
+  padding-right: $spacing;
+}

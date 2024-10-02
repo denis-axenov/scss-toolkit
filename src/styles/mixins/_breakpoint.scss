@@ -1,0 +1,42 @@
+@use "sass:math";
+@use "../functions/unit";
+
+$_type: width !default;
+
+
+@mixin max($point, $type: $_type) {
+
+  @if math.is-unitless($point) {
+    $point: #{$point}px;
+  }
+
+  @media only screen and ($type < $point) {
+    @content;
+  }
+}
+
+@mixin min($point, $type: $_type) {
+
+  @if math.is-unitless($point) {
+    $point: #{$point}px;
+  }
+
+  @media only screen and ($type > $point) {
+    @content;
+  }
+}
+
+@mixin minMax($minPoint, $maxPoint, $type: $_type) {
+
+  @if math.is-unitless($minPoint) {
+    $minPoint: #{$minPoint}px;
+  }
+
+  @if math.is-unitless($maxPoint) {
+    $maxPoint: #{$maxPoint}px;
+  }
+
+  @media only screen and ($minPoint < $type < $maxPoint) {
+    @content;
+  }
+}

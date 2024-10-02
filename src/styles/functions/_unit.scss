@@ -1,0 +1,9 @@
+@use "sass:math";
+
+@function set($size) {
+  @if math.is-unitless($size) {
+    $size: #{$size}px;
+  }
+
+  @return $size;
+}

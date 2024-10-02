@@ -1,0 +1,32 @@
+@use "../../styles/reset";
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+
+html {
+  font-family: "Source Code Pro", monospace;
+  font-size: 16px;
+}
+
+body {
+  width: 100%;
+}
+
+.main {
+  background: #fff;
+  min-height: 100vh;
+  max-width: 100%;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .logo {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 100px;
+    font-weight: 500;
+    border: 1px solid #333;
+    color: #333;
+    padding: 10px 30px;
+  }
+}

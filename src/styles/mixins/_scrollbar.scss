@@ -1,0 +1,55 @@
+@use "sass:color";
+@use "../functions/unit";
+
+
+$_size: 16 !default;
+$_trackColor: #fff !default;
+$_thumbColor: #666 !default;
+$_thumbRadius: false !default;
+$_thumbHover: false !default;
+$_thumbHoverColor: false !default;
+
+
+@mixin set(
+  $size: $_size,
+  $trackColor: $_trackColor,
+  $thumbColor: $_thumbColor,
+  $thumbRadius: $_thumbRadius,
+  $thumbHover: $_thumbHover,
+  $thumbHoverColor: $_thumbHoverColor,
+) {
+
+  $size: unit.set($size);
+
+  &::-webkit-scrollbar {
+    width: $size;
+    height: $size;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $trackColor;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $thumbColor;
+    cursor: pointer;
+
+    @if $thumbRadius {
+      $thumbRadius: unit.set($thumbRadius);
+
+      border-radius: $thumbRadius;
+    }
+
+    @if $thumbHover or $thumbHoverColor {
+
+      &:hover {
+
+        @if $thumbHoverColor == false {
+          $thumbHoverColor: color.scale($thumbColor, $alpha: -20%)
+        }
+
+        background-color: $thumbHoverColor;
+      }
+    }
+  }
+}

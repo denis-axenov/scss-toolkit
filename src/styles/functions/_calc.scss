@@ -1,0 +1,17 @@
+@use "sass:math";
+
+
+@function sizeWithGap($size, $space: null) {
+
+  $width: math.div(100%, $size);
+
+  @if $size < 2 {
+    @return 100%;
+  }
+
+  @if $space {
+    @return calc($width - (($space * ($size - 1)) / $size));
+  }
+
+  @return $width;
+}

@@ -1,0 +1,21 @@
+@use "sass:math";
+
+$_transitionProperties: all !default;
+$_transitionDuration: .3s !default;
+$_transitionTiming: ease !default;
+
+
+@mixin transition(
+  $properties: $_transitionProperties,
+  $duration: $_transitionDuration,
+  $timing: $_transitionTiming
+) {
+
+  @if math.is-unitless($duration) {
+    $duration: #{$duration}s;
+  }
+
+  transition-property: $properties;
+  transition-duration: $duration;
+  transition-timing-function: $timing;
+}
