@@ -4,7 +4,6 @@ import path from "node:path";
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     app: {
-        baseURL: "/scss-toolkit/",
         head: {
             link: [
                 {
@@ -26,7 +25,6 @@ export default defineNuxtConfig({
     devtools: {
         enabled: true
     },
-    srcDir: path.relative(__dirname, 'src/docs'),
-    ssr: false,
+    srcDir: path.resolve(__dirname, 'src/docs'),
     compatibilityDate: "2024-10-01"
 })
