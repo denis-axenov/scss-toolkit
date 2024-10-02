@@ -14,6 +14,11 @@ export default defineNuxtConfig({
           ]
       }
   },
+  build: {
+      transpile: [
+          'shiki'
+      ],
+  },
   css: [
       '~/assets/global.scss'
   ],
