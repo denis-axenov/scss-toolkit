@@ -3,6 +3,7 @@
   "version": "1.0.0-alpha",
   "author": "Denis Axenov",
   "license": "MIT",
+  "type": "module",
   "bugs": {
     "url": "https://github.com/denis-axenov/scss-toolkit/issues"
   },

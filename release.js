@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import exec from 'exec-sh';
 
 const releaseFolder = './release'
-const sourceFolder = './src/styles';
+const sourceFolder = './src';
 const packageJSON = './package.json';
 const releasePackageJSON = releaseFolder + '/package.json';
 
@@ -40,13 +40,14 @@ fs.cp(sourceFolder, releaseFolder, {
 
             delete packageJson.scripts;
             delete packageJson.devDependencies;
+            delete packageJson.dependencies;
 
             const updatedPackageJson = JSON.stringify(packageJson, null, 2);
 
             fs.writeFile(releasePackageJSON, updatedPackageJson, 'utf8', (error) => {
                 if (error) throw error;
 
-                exec('cd ./release & npm login --scope=@denis-axenov --auth-type=legacy --registry=https://npm.pkg.github.com', (error) => {
+                exec('cd ./release & npm publish', (error) => {
                     if (error) throw error;
 
                     fs.rm(releaseFolder, {

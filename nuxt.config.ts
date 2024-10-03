@@ -1,8 +1,6 @@
 import path from "node:path";
 
 
-console.log(process.env.NODE_ENV)
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
     app: {
@@ -29,5 +27,14 @@ export default defineNuxtConfig({
         enabled: true
     },
     srcDir: path.resolve(__dirname, 'src/docs'),
-    compatibilityDate: "2024-10-01"
+    compatibilityDate: "2024-10-01",
+    vite: {
+        css: {
+            preprocessorOptions: {
+                scss: {
+                    api: "modern-compiler"
+                }
+            }
+        }
+    }
 })
