@@ -2,7 +2,7 @@ import * as fs from 'fs';
 import exec from 'exec-sh';
 
 const releaseFolder = './release'
-const sourceFolder = './src';
+const sourceFolder = './src/styles';
 const packageJSON = './package.json';
 const releasePackageJSON = releaseFolder + '/package.json';
 
