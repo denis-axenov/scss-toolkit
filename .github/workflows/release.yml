@@ -29,9 +29,6 @@ jobs:
           node-version: 22.2.0
           registry-url: https://registry.npmjs.org/
 
-      - name: Install dependencies
-        run: npm ci
-
       - name: Release folder
         run: npm run release
 
