@@ -35,4 +35,6 @@ jobs:
       - name: Publish package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPMJS_TOKEN }}
-        run: npm publish --prefix release
+        run: |
+          cd release
+          npm publish
