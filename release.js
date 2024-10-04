@@ -1,5 +1,5 @@
 import * as fs from 'fs';
-import exec from 'exec-sh';
+
 
 const releaseFolder = './release'
 const sourceFolder = './src/styles';
@@ -46,19 +46,6 @@ fs.cp(sourceFolder, releaseFolder, {
 
             fs.writeFile(releasePackageJSON, updatedPackageJson, 'utf8', (error) => {
                 if (error) throw error;
-
-                exec('cd ./release & npm publish', (error) => {
-                    if (error) throw error;
-
-                    fs.rm(releaseFolder, {
-                        recursive: true,
-                        force: true
-                    }, (error) => {
-                        if (error) throw error;
-                    });
-
-                    console.log('Released successfully!');
-                });
             });
         });
     });
