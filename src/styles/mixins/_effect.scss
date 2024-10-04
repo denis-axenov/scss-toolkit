@@ -10,7 +10,6 @@ $_transitionTiming: ease !default;
   $duration: $_transitionDuration,
   $timing: $_transitionTiming
 ) {
-
   @if math.is-unitless($duration) {
     $duration: #{$duration}s;
   }

@@ -5,7 +5,6 @@ $_type: width !default;
 
 
 @mixin max($point, $type: $_type) {
-
   @if math.is-unitless($point) {
     $point: #{$point}px;
   }
@@ -16,7 +15,6 @@ $_type: width !default;
 }
 
 @mixin min($point, $type: $_type) {
-
   @if math.is-unitless($point) {
     $point: #{$point}px;
   }
@@ -27,7 +25,6 @@ $_type: width !default;
 }
 
 @mixin minMax($minPoint, $maxPoint, $type: $_type) {
-
   @if math.is-unitless($minPoint) {
     $minPoint: #{$minPoint}px;
   }

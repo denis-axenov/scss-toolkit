@@ -41,9 +41,7 @@ $_thumbHoverColor: false !default;
     }
 
     @if $thumbHover or $thumbHoverColor {
-
       &:hover {
-
         @if $thumbHoverColor == false {
           $thumbHoverColor: color.scale($thumbColor, $alpha: -20%)
         }

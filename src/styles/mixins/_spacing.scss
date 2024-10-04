@@ -15,8 +15,7 @@ $_paddingSpacing: 1rem !default;
   }
 
   @if $spacingListCount == 2 {
-    column-gap: list.nth($spacing, 1);
-    row-gap: list.nth($spacing, 2);
+    gap: list.nth($spacing, 2) list.nth($spacing, 1);
   }
 }
 
