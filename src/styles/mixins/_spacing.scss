@@ -1,5 +1,5 @@
 @use 'sass:list';
-
+@use "sass:math";
 
 $_gapSpacing: 1rem !default;
 $_paddingSpacing: 1rem !default;
@@ -22,6 +22,11 @@ $_paddingSpacing: 1rem !default;
 @mixin paddingY(
   $spacing: $_paddingSpacing
 ) {
+
+  @if math.is-unitless($spacing) {
+    $spacing: #{$spacing}px;
+  }
+
   padding-top: $spacing;
   padding-bottom: $spacing;
 }
@@ -29,6 +34,11 @@ $_paddingSpacing: 1rem !default;
 @mixin paddingX(
   $spacing: $_paddingSpacing
 ) {
+
+  @if math.is-unitless($spacing) {
+    $spacing: #{$spacing}px;
+  }
+
   padding-left: $spacing;
   padding-right: $spacing;
 }
