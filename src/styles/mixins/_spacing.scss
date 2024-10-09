@@ -42,3 +42,27 @@ $_paddingSpacing: 1rem !default;
   padding-left: $spacing;
   padding-right: $spacing;
 }
+
+@mixin marginY(
+  $spacing: $_paddingSpacing
+) {
+
+  @if math.is-unitless($spacing) {
+    $spacing: #{$spacing}px;
+  }
+
+  margin-top: $spacing;
+  margin-bottom: $spacing;
+}
+
+@mixin marginX(
+  $spacing: $_paddingSpacing
+) {
+
+  @if math.is-unitless($spacing) {
+    $spacing: #{$spacing}px;
+  }
+
+  margin-left: $spacing;
+  margin-right: $spacing;
+}
