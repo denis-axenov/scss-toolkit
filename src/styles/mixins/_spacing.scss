@@ -1,23 +1,11 @@
 @use 'sass:list';
 @use "sass:math";
 
-$_gapSpacing: 1rem !default;
-$_paddingSpacing: 1rem !default;
 
+$_globalSpacing: 1rem !default;
+$_paddingSpacing: $_globalSpacing !default;
+$_marginSpacing: $_globalSpacing !default;
 
-@mixin gap(
-  $spacing: $_gapSpacing
-) {
-  $spacingListCount: list.length($spacing);
-
-  @if $spacingListCount == 1 {
-    gap: list.nth($spacing, 1);
-  }
-
-  @if $spacingListCount == 2 {
-    gap: list.nth($spacing, 2) list.nth($spacing, 1);
-  }
-}
 
 @mixin paddingY(
   $spacing: $_paddingSpacing
@@ -44,7 +32,7 @@ $_paddingSpacing: 1rem !default;
 }
 
 @mixin marginY(
-  $spacing: $_paddingSpacing
+  $spacing: $_marginSpacing
 ) {
 
   @if math.is-unitless($spacing) {
@@ -56,7 +44,7 @@ $_paddingSpacing: 1rem !default;
 }
 
 @mixin marginX(
-  $spacing: $_paddingSpacing
+  $spacing: $_marginSpacing
 ) {
 
   @if math.is-unitless($spacing) {

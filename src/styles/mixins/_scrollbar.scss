@@ -1,4 +1,5 @@
 @use "sass:color";
+@use "sass:math";
 @use "../functions/unit";
 
 
@@ -19,7 +20,9 @@ $_thumbHoverColor: false !default;
   $thumbHoverColor: $_thumbHoverColor,
 ) {
 
-  $size: unit.set($size);
+  @if math.is-unitless($size) {
+    $size: #{$size}px;
+  }
 
   &::-webkit-scrollbar {
     width: $size;
@@ -35,7 +38,10 @@ $_thumbHoverColor: false !default;
     cursor: pointer;
 
     @if $thumbRadius {
-      $thumbRadius: unit.set($thumbRadius);
+
+      @if math.is-unitless($thumbRadius) {
+        $thumbRadius: #{$thumbRadius}px;
+      }
 
       border-radius: $thumbRadius;
     }
