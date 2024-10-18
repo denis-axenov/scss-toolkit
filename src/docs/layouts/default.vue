@@ -1,5 +1,10 @@
 <template>
-  <div class="content-wrapper">
+  <Sidebar/>
+  <main>
+    <Header/>
     <slot/>
-  </div>
+    <Footer/>
+  </main>
 </template>
+<script setup lang="ts">
+</script>

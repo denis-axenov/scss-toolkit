@@ -7,30 +7,6 @@ $_paddingSpacing: $_globalSpacing !default;
 $_marginSpacing: $_globalSpacing !default;
 
 
-@mixin paddingY(
-  $spacing: $_paddingSpacing
-) {
-
-  @if math.is-unitless($spacing) {
-    $spacing: #{$spacing}px;
-  }
-
-  padding-top: $spacing;
-  padding-bottom: $spacing;
-}
-
-@mixin paddingX(
-  $spacing: $_paddingSpacing
-) {
-
-  @if math.is-unitless($spacing) {
-    $spacing: #{$spacing}px;
-  }
-
-  padding-left: $spacing;
-  padding-right: $spacing;
-}
-
 @mixin marginY(
   $spacing: $_marginSpacing
 ) {
@@ -43,6 +19,7 @@ $_marginSpacing: $_globalSpacing !default;
   margin-bottom: $spacing;
 }
 
+
 @mixin marginX(
   $spacing: $_marginSpacing
 ) {
@@ -53,4 +30,30 @@ $_marginSpacing: $_globalSpacing !default;
 
   margin-left: $spacing;
   margin-right: $spacing;
+}
+
+
+@mixin paddingY(
+  $spacing: $_paddingSpacing
+) {
+
+  @if math.is-unitless($spacing) {
+    $spacing: #{$spacing}px;
+  }
+
+  padding-top: $spacing;
+  padding-bottom: $spacing;
+}
+
+
+@mixin paddingX(
+  $spacing: $_paddingSpacing
+) {
+
+  @if math.is-unitless($spacing) {
+    $spacing: #{$spacing}px;
+  }
+
+  padding-left: $spacing;
+  padding-right: $spacing;
 }
