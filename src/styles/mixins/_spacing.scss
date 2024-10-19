@@ -5,6 +5,7 @@
 $_globalSpacing: 1rem !default;
 $_paddingSpacing: $_globalSpacing !default;
 $_marginSpacing: $_globalSpacing !default;
+$_negativeSpacing: $_globalSpacing !default;
 
 
 @mixin marginY(
@@ -56,4 +57,20 @@ $_marginSpacing: $_globalSpacing !default;
 
   padding-left: $spacing;
   padding-right: $spacing;
+}
+
+
+@mixin stretchX(
+  $spacing: $_negativeSpacing
+) {
+  @include paddingX($spacing);
+  @include marginX($spacing * -1);
+}
+
+
+@mixin stretchY(
+  $spacing: $_negativeSpacing
+) {
+  @include paddingY($spacing);
+  @include marginY($spacing * -1);
 }

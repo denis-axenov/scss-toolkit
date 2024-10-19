@@ -1,5 +1,6 @@
 @use "../../styles/reset";
 @use "../../styles/mixins/spacing";
+@use "../../styles/mixins/scrollbar";
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
@@ -29,7 +30,7 @@ body {
     font-weight: 500;
     border: 1px solid #333;
     color: #333;
-    padding: 10px 30px;
+    padding: 10px 40px 0;
   }
 }
 
@@ -41,12 +42,13 @@ a {
   color: #333;
 }
 
+$borderWidth: 2px;
+
 aside {
   display: flex;
   flex-direction: column;
-  padding: 1rem;
   width: 250px;
-  border-right: 1px solid #eee;
+  border-right: $borderWidth solid #eee;
   height: 100vh;
 
   .logo {
@@ -55,23 +57,36 @@ aside {
     font-weight: 500;
     border: 1px solid #333;
     color: #333;
-    padding: 6px 20px;
+    padding: 3px 20px 0;
     display: flex;
     justify-content: center;
+    margin: 1rem;
   }
 
-  h2 {
-    border-top: 1px solid #eee;
-    padding-top: 1rem;
-    margin-top: 1rem;
-  }
-
+  h2,
   h3 {
     margin-top: 1rem;
   }
 
   a {
     @include spacing.paddingY(4)
+  }
+
+  nav {
+    height: 100vh;
+    overflow: auto;
+    padding-left: 1rem;
+    margin-right: -#{$borderWidth};
+    padding-bottom: 100px;
+    @include scrollbar.set($borderWidth, #f1f1f1, #ccc, #000, 10px);
+
+    .segment {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid #eee;
+      padding-bottom: 1rem;
+      margin-right: 1rem;
+    }
   }
 }
 
