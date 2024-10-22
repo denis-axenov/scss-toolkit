@@ -6,18 +6,16 @@
 $_size: 16 !default;
 $_trackColor: #fff !default;
 $_thumbColor: #666 !default;
-$_thumbRadius: false !default;
-$_thumbHover: false !default;
 $_thumbHoverColor: false !default;
+$_thumbRadius: false !default;
 
 
 @mixin set(
   $size: $_size,
   $trackColor: $_trackColor,
   $thumbColor: $_thumbColor,
-  $thumbRadius: $_thumbRadius,
-  $thumbHover: $_thumbHover,
   $thumbHoverColor: $_thumbHoverColor,
+  $thumbRadius: $_thumbRadius
 ) {
 
   @if math.is-unitless($size) {
@@ -46,13 +44,9 @@ $_thumbHoverColor: false !default;
       border-radius: $thumbRadius;
     }
 
-    @if $thumbHover or $thumbHoverColor {
+    @if $thumbHoverColor {
       &:hover {
-        @if $thumbHoverColor == false {
-          $thumbHoverColor: color.scale($thumbColor, $alpha: -20%)
-        }
-
-        background-color: $thumbHoverColor;
+        background-color: color.scale($thumbHoverColor, $alpha: -20%);
       }
     }
   }
