@@ -1,7 +1,11 @@
-@mixin flexCenter() {
+@mixin flexCenter($wrap: false) {
   display: flex;
   justify-content: center;
   align-items: center;
+
+  @if $wrap {
+    flex-wrap: wrap;
+  }
 }
 
 @mixin positionCenter() {
