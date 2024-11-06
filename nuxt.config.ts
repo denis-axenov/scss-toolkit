@@ -1,8 +1,12 @@
 import path from "node:path";
+import {fileURLToPath} from "node:url";
 
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    alias: {
+        'scss-toolkit': fileURLToPath(new URL('./src/styles', import.meta.url))
+    },
     app: {
         baseURL: process.env.NODE_ENV === "production" ? "/scss-toolkit/" : "/",
         head: {
