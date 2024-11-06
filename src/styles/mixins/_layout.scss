@@ -24,7 +24,7 @@ $_flexDirection: false !default;
 ) {
   display: flex;
   flex-wrap: wrap;
-  gap: $spacing;
+  column-gap: $spacing;
 
   @if $flexDirection {
     flex-direction: $flexDirection;
