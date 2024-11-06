@@ -14,8 +14,7 @@ $_flexDirection: false !default;
 ) {
   display: grid;
   grid-template-columns: repeat($rowCount, 1fr);
-
-  @include spacing.gap($spacing);
+  gap: $spacing;
 }
 
 @mixin flexGrid(
@@ -25,8 +24,7 @@ $_flexDirection: false !default;
 ) {
   display: flex;
   flex-wrap: wrap;
-
-  @include spacing.gap($spacing);
+  gap: $spacing;
 
   @if $flexDirection {
     flex-direction: $flexDirection;
