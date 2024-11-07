@@ -19,19 +19,22 @@ export default defineNuxtConfig({
             ]
         }
     },
-    build: {
-        transpile: [
-            'shiki'
-        ],
-    },
     css: [
         '~/assets/global.scss'
     ],
+    compatibilityDate: "2024-10-01",
     devtools: {
         enabled: true
     },
+    modules: [
+        "nuxt-shiki"
+    ],
+    shiki: {
+        defaultLang: 'scss',
+        defaultTheme: 'dark-plus',
+        highlightOptions: {}
+    },
     srcDir: path.resolve(__dirname, 'src/docs'),
-    compatibilityDate: "2024-10-01",
     vite: {
         css: {
             preprocessorOptions: {
