@@ -1,6 +1,7 @@
 @use "../../styles/reset";
 @use "../../styles/mixins/spacing";
 @use "../../styles/mixins/scrollbar";
+@use "../../styles/mixins/layout";
 
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
 
@@ -93,6 +94,57 @@ aside {
 main {
   padding: 1rem;
   width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+
+  .code {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+
+    pre {
+      background-color: #1E1E1E;
+      color: #D4D4D4;
+      border-radius: 6px;
+      overflow: hidden;
+      padding: 20px;
+    }
+  }
+
+  .description {
+
+    p {
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+      color: #3b3b3b;
+      line-height: 1.5;
+    }
+  }
+
+  h1,
+  h2,
+  h3, {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .method {
+
+    code {
+      background-color: #ececec;
+      border-radius: .25rem;
+      color: #0d0d0d;
+      padding: .15rem .3rem;
+      font-weight: 500;
+    }
+
+    .result {
+      background-color: #f8f8f8;
+      padding: 20px;
+      border: 1px solid #ddd;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
 }
 
 .links {
@@ -101,5 +153,15 @@ main {
 
   a {
     @include spacing.paddingY(5)
+  }
+}
+
+.params {
+
+  @include layout.flexGrid(3, 20px);
+
+  &_head {
+    font-weight: bold;
+    padding: 10px 0;
   }
 }
