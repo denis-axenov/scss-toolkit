@@ -31,6 +31,10 @@
         <NuxtLink to="/docs/mixins/spacing#paddingX">paddingX</NuxtLink>
         <NuxtLink to="/docs/mixins/spacing#stretchX">stretchX</NuxtLink>
         <NuxtLink to="/docs/mixins/spacing#stretchY">stretchY</NuxtLink>
+
+        <h3>Text</h3>
+        <NuxtLink to="/docs/mixins/text#truncate">truncate</NuxtLink>
+
       </div>
 
       <div class="segment">
