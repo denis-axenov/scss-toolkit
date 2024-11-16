@@ -24,12 +24,12 @@
   "dependencies": {
     "nuxt": "^3.14.159",
     "nuxt-shiki": "^0.3.0",
-    "vue": "^3.5.12",
+    "vue": "^3.5.13",
     "vue-router": "^4.4.5"
   },
   "devDependencies": {
     "postcss-scss": "^4.0.9",
-    "sass": "^1.80.7",
+    "sass": "^1.81.0",
     "stylelint": "^16.10.0",
     "stylelint-config-standard": "^36.0.1",
     "stylelint-scss": "^6.9.0"
