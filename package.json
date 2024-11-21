@@ -22,7 +22,7 @@
     "lint:fix": "stylelint src/**/*.scss --fix"
   },
   "dependencies": {
-    "nuxt": "^3.14.159",
+    "nuxt": "^3.14.1592",
     "nuxt-shiki": "^0.3.0",
     "vue": "^3.5.13",
     "vue-router": "^4.4.5"
