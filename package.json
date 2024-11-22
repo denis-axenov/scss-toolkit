@@ -1,6 +1,6 @@
 {
   "name": "scss-toolkit",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "author": "Denis Axenov",
   "license": "MIT",
   "type": "module",
@@ -32,6 +32,6 @@
     "sass": "^1.81.0",
     "stylelint": "^16.10.0",
     "stylelint-config-standard": "^36.0.1",
-    "stylelint-scss": "^6.9.0"
+    "stylelint-scss": "^6.10.0"
   }
 }
